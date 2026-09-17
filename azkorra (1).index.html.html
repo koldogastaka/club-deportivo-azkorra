@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zelai Alai Hipika Eskola · Hípica en Iurreta</title>
+<meta name="description" content="Zelai Alai Hipika Eskola, Iurreta (Bizkaia). Doma clásica, saltos, completo, paseos, iniciación y perfeccionamiento. Clases para todos los niveles." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pine-950:#122017;
+    --pine-900:#17281d;
+    --pine-800:#20372a;
+    --pine-700:#2c4a38;
+    --oat-100:#f6f1e4;
+    --oat-200:#eee5cf;
+    --oat-300:#e2d4ae;
+    --gold-500:#b98a2e;
+    --gold-600:#96701e;
+    --clay-500:#8a4a2f;
+    --ink:#1b1b16;
+    --line: rgba(18,32,23,.14);
+    --line-light: rgba(246,241,228,.18);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--oat-100);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.55;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    letter-spacing:-.01em;
+    margin:0;
+    color:var(--pine-950);
+  }
+  p{margin:0}
+  a{color:inherit}
+  img{display:block; max-width:100%}
+  .wrap{width:min(1180px, 92%); margin:0 auto}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:sticky; top:0; z-index:60;
+    background:var(--pine-950);
+    border-bottom:1px solid var(--line-light);
+  }
+  .nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 0;
+  }
+  .brand{display:flex; align-items:center; gap:12px; color:var(--oat-100)}
+  .brand-mark{
+    width:38px; height:38px; border-radius:50%;
+    background:var(--gold-500);
+    display:grid; place-items:center;
+    color:var(--pine-950); font-family:'Fraunces',serif; font-weight:700; font-size:18px;
+  }
+  .brand-name{font-family:'Fraunces',serif; font-size:19px; font-weight:600}
+  .brand-sub{font-size:12px; color:var(--oat-300); font-weight:500}
+  .nav-links{display:flex; gap:28px; list-style:none; margin:0; padding:0}
+  .nav-links a{
+    font-size:14.5px; font-weight:500; color:var(--oat-200);
+    padding:4px 2px; border-bottom:1px solid transparent;
+  }
+  .nav-links a:hover{color:var(--oat-100); border-color:var(--gold-500)}
+  .nav-cta{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--gold-500); color:var(--pine-950);
+    font-weight:600; font-size:14.5px;
+    padding:10px 18px; border-radius:3px;
+  }
+  .nav-cta:hover{background:var(--oat-100)}
+  @media (max-width:880px){ .nav-links{display:none} }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--pine-950);
+    color:var(--oat-100);
+    padding:64px 0 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid; grid-template-columns: 1.05fr .95fr;
+    gap:48px; align-items:center;
+  }
+  .hero-eyebrow{
+    color:var(--oat-300); font-size:14.5px; font-weight:500;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(34px,4.6vw,58px);
+    line-height:1.06;
+    max-width:15ch;
+  }
+  .hero-lede{
+    margin-top:22px; font-size:17.5px; color:var(--oat-200);
+    max-width:46ch; font-weight:400;
+  }
+  .hero-actions{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 22px; border-radius:3px;
+    font-weight:600; font-size:15px;
+    border:1px solid transparent;
+    transition:transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-gold{background:var(--gold-500); color:var(--pine-950)}
+  .btn-gold:hover{background:#d0a648}
+  .btn-outline{border-color:var(--line-light); color:var(--oat-100)}
+  .btn-outline:hover{background:rgba(246,241,228,.08)}
+  .btn-dark{background:var(--pine-900); color:var(--oat-100)}
+  .btn-dark:hover{background:var(--pine-800)}
+
+  .hero-figure{
+    position:relative;
+    padding-bottom:44px;
+  }
+  .hero-figure img{
+    width:100%; height:460px; object-fit:cover;
+    clip-path: polygon(6% 0, 100% 0, 100% 92%, 0 100%);
+  }
+  .hero-tag{
+    position:absolute; left:0; bottom:0;
+    background:var(--oat-100); color:var(--pine-950);
+    padding:16px 20px; max-width:280px;
+    font-size:14px; font-weight:500;
+    border-left:4px solid var(--gold-500);
+  }
+  .hero-tag b{display:block; font-family:'Fraunces',serif; font-size:16px; margin-bottom:4px}
+
+  .hero-strip{
+    border-top:1px solid var(--line-light);
+    margin-top:40px;
+  }
+  .hero-strip .wrap{
+    display:grid; grid-template-columns:repeat(3,1fr);
+    padding:26px 0;
+    gap:20px;
+  }
+  .hero-stat{padding-right:20px}
+  .hero-stat b{display:block; font-family:'Fraunces',serif; font-size:22px; color:var(--oat-100)}
+  .hero-stat span{font-size:13.5px; color:var(--oat-300)}
+  @media (max-width:880px){
+    .hero .wrap{grid-template-columns:1fr}
+    .hero-figure{order:-1}
+    .hero-strip .wrap{grid-template-columns:1fr; gap:14px}
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  section{padding:88px 0}
+  .head{
+    display:grid; grid-template-columns: .55fr .45fr;
+    gap:32px; align-items:end;
+    margin-bottom:44px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:26px;
+  }
+  .head .kicker{color:var(--gold-600); font-weight:600; font-size:14px; margin-bottom:10px}
+  .head h2{font-size:clamp(26px,3vw,38px)}
+  .head p{color:#4b4b40; font-size:16px; max-width:44ch}
+  @media (max-width:760px){ .head{grid-template-columns:1fr} }
+
+  /* ---------- DISCIPLINE CARDS ---------- */
+  .disciplines{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:2px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  @media (max-width:980px){ .disciplines{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:560px){ .disciplines{grid-template-columns:1fr} }
+  .disc-card{background:var(--oat-100); display:flex; flex-direction:column}
+  .disc-card .ph{height:210px; overflow:hidden}
+  .disc-card .ph img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease}
+  .disc-card:hover .ph img{transform:scale(1.05)}
+  .disc-card .cbody{padding:24px; display:flex; flex-direction:column; gap:12px; flex:1}
+  .disc-card h3{font-size:20px}
+  .disc-card p{color:#4b4b40; font-size:14.5px}
+  .disc-card ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:6px}
+  .disc-card li{font-size:13.5px; color:#4b4b40; padding-left:16px; position:relative}
+  .disc-card li::before{content:"·"; position:absolute; left:0; color:var(--gold-600); font-weight:700}
+  .disc-card .link{
+    margin-top:auto; font-size:13.5px; font-weight:600; color:var(--pine-900);
+    display:inline-flex; align-items:center; gap:6px; padding-top:10px;
+    border-top:1px solid var(--line); width:fit-content;
+  }
+  .disc-card .link:hover{color:var(--gold-600)}
+
+  /* ---------- SPLIT (Iniciación / Perfeccionamiento) ---------- */
+  .split-section{background:var(--pine-950); color:var(--oat-100)}
+  .split-section .head{border-color:var(--line-light)}
+  .split-section .head .kicker{color:var(--gold-500)}
+  .split-section .head h2{color:var(--oat-100)}
+  .split-section .head p{color:var(--oat-300)}
+  .split{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center}
+  @media (max-width:860px){ .split{grid-template-columns:1fr} }
+  .split.reverse .split-figure{order:2}
+  .split-figure img{width:100%; height:380px; object-fit:cover}
+  .split-copy h3{color:var(--oat-100); font-size:26px; margin-bottom:16px}
+  .split-copy p{color:var(--oat-200); font-size:16px; margin-bottom:20px}
+  .split-copy ul{margin:0 0 26px; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px}
+  .split-copy li{padding-left:22px; position:relative; font-size:14.5px; color:var(--oat-200)}
+  .split-copy li::before{content:"—"; position:absolute; left:0; color:var(--gold-500)}
+  .divider-block{padding:70px 0 0}
+
+  /* ---------- GALLERY ---------- */
+  .gallery{
+    display:grid; grid-template-columns: 1.4fr 1fr 1fr; grid-auto-rows:200px; gap:6px;
+  }
+  @media (max-width:760px){ .gallery{grid-template-columns:1fr 1fr; grid-auto-rows:150px} }
+  .gallery img{width:100%; height:100%; object-fit:cover}
+  .gallery .big{grid-row:span 2}
+  @media (max-width:760px){ .gallery .big{grid-row:span 1; grid-column:span 2} }
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--oat-200)}
+  .contact-grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:48px}
+  @media (max-width:880px){ .contact-grid{grid-template-columns:1fr} }
+  .info-list{list-style:none; margin:26px 0 0; padding:0; display:flex; flex-direction:column; gap:18px}
+  .info-list li{display:flex; gap:14px}
+  .info-ico{
+    width:38px; height:38px; border-radius:50%; background:var(--pine-950); color:var(--oat-100);
+    display:grid; place-items:center; flex:0 0 auto; font-size:16px;
+  }
+  .info-list b{display:block; font-size:15px}
+  .info-list span{font-size:14px; color:#4b4b40}
+
+  form{background:var(--oat-100); border:1px solid var(--line); padding:32px}
+  .frow{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px}
+  @media (max-width:520px){ .frow{grid-template-columns:1fr} }
+  label{display:block; font-size:13px; font-weight:600; margin-bottom:6px; color:var(--pine-900)}
+  input, select, textarea{
+    width:100%; padding:11px 13px; border:1px solid var(--line); background:#fff;
+    font-family:inherit; font-size:14.5px; color:var(--ink); border-radius:2px;
+  }
+  input:focus, select:focus, textarea:focus{outline:2px solid var(--gold-500); outline-offset:1px}
+  textarea{min-height:110px; resize:vertical}
+  .fnote{font-size:12.5px; color:#6b6b5e; margin-top:14px}
+  form .btn-gold{margin-top:6px; width:100%; justify-content:center; border:none; cursor:pointer; font-size:15px}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--pine-950); color:var(--oat-300); padding:40px 0}
+  .foot-grid{display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; align-items:center}
+  .foot-grid .brand-name{color:var(--oat-100)}
+  footer small{font-size:13px}
+
+  @media (prefers-reduced-motion: reduce){
+    .disc-card .ph img{transition:none}
+  }
+</style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="#inicio">
+        <span class="brand-mark">Z</span>
+        <span>
+          <span class="brand-name">Zelai Alai</span><br>
+          <span class="brand-sub">Hipika Eskola · Iurreta</span>
+        </span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#disciplinas">Disciplinas</a></li>
+        <li><a href="#iniciacion">Iniciación</a></li>
+        <li><a href="#perfeccionamiento">Perfeccionamiento</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <a class="nav-cta" href="#contacto">Pedir información</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio" style="padding-bottom:0">
+    <div class="wrap">
+      <div>
+        <div class="hero-eyebrow">Iurreta, Bizkaia</div>
+        <h1>Aprende y avanza en el mundo del caballo, a tu ritmo</h1>
+        <p class="hero-lede">
+          En Zelai Alai Hipika Eskola formamos jinetes y amazonas de todas las edades y niveles: desde el primer contacto con el
+          caballo hasta la preparación para competición, en doma clásica, saltos, completo y paseos.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#contacto">Pide una clase de prueba</a>
+          <a class="btn btn-outline" href="#disciplinas">Ver disciplinas</a>
+        </div>
+      </div>
+      <div class="hero-figure">
+        <img src="https://images.pexels.com/photos/1524620/pexels-photo-1524620.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1" alt="Jinete saltando un obstáculo en el club" />
+        <div class="hero-tag"><b>Grupos reducidos</b>Clases adaptadas a cada nivel, con seguimiento cercano de tu progreso.</div>
+      </div>
+    </div>
+    <div class="hero-strip">
+      <div class="wrap">
+        <div class="hero-stat"><b>Todos los niveles</b><span>Desde el primer contacto con el caballo</span></div>
+        <div class="hero-stat"><b>6 disciplinas</b><span>Doma, saltos, completo, paseos y más</span></div>
+        <div class="hero-stat"><b>Seguimiento por etapas</b><span>Objetivos claros en cada trimestre</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCIPLINAS -->
+  <section id="disciplinas">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="kicker">Actividades</div>
+          <h2>Cuatro disciplinas, un mismo cuidado por el caballo</h2>
+        </div>
+        <p>Cada modalidad tiene su propio ritmo de trabajo. Te ayudamos a elegir la que mejor encaja con tu
+          experiencia y tus objetivos.</p>
+      </div>
+
+      <div class="disciplines">
+        <article class="disc-card">
+          <div class="ph"><img src="https://images.pexels.com/photos/5655497/pexels-photo-5655497.jpeg?cs=tinysrgb&dpr=1&w=700" alt="Salto de obstáculos sobre agua"></div>
+          <div class="cbody">
+            <h3>Saltos</h3>
+            <p>Técnica de aproximación, ritmo e impulsión sobre recorridos progresivos.</p>
+            <ul>
+              <li>Calentamiento y trazado de línea</li>
+              <li>Alturas progresivas por nivel</li>
+              <li>Trabajo de seguridad y confianza</li>
+            </ul>
+            <a class="link" href="#contacto">Consultar horarios</a>
+          </div>
+        </article>
+
+        <article class="disc-card">
+          <div class="ph"><img src="https://images.pexels.com/photos/3723115/pexels-photo-3723115.jpeg?cs=tinysrgb&dpr=1&w=700" alt="Jinete en pista al aire libre"></div>
+          <div class="cbody">
+            <h3>Doma clásica</h3>
+            <p>Equilibrio, impulsión y armonía entre jinete y caballo, figura a figura.</p>
+            <ul>
+              <li>Ejercicios organizados por nivel</li>
+              <li>Transiciones y figuras base</li>
+              <li>Postura, manos y ayudas</li>
+            </ul>
+            <a class="link" href="#contacto">Consultar horarios</a>
+          </div>
+        </article>
+
+        <article class="disc-card">
+          <div class="ph"><img src="https://images.pexels.com/photos/32393638/pexels-photo-32393638/free-photo-of-equestrian-rider-on-horseback-in-competition.jpeg?cs=tinysrgb&dpr=1&w=700" alt="Recorrido de completo"></div>
+          <div class="cbody">
+            <h3>Completo</h3>
+            <p>Preparación integral: obstáculos, fondo y control del recorrido.</p>
+            <ul>
+              <li>Progresión de dificultad de obstáculos</li>
+              <li>Trabajo de resistencia y control</li>
+              <li>Planificación de la salida</li>
+            </ul>
+            <a class="link" href="#contacto">Consultar horarios</a>
+          </div>
+        </article>
+
+        <article class="disc-card">
+          <div class="ph"><img src="https://images.pexels.com/photos/614505/pexels-photo-614505.jpeg?w=700&h=520&dpr=1" alt="Paseo a caballo por el campo"></div>
+          <div class="cbody">
+            <h3>Paseos</h3>
+            <p>Rutas tranquilas por el entorno de Iurreta, ideales para iniciarse sin presión.</p>
+            <ul>
+              <li>Rutas adaptadas al grupo</li>
+              <li>Acompañamiento constante</li>
+              <li>Planes para familias y grupos</li>
+            </ul>
+            <a class="link" href="#contacto">Reservar paseo</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INICIACIÓN -->
+  <section id="iniciacion" class="split-section">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="kicker">Empezar desde cero</div>
+          <h2>Iniciación</h2>
+        </div>
+        <p>Para quienes montan por primera vez o retoman tras un tiempo sin hacerlo. Rutinas claras y acompañamiento
+          en cada sesión.</p>
+      </div>
+
+      <div class="split">
+        <div class="split-figure">
+          <img src="https://images.pexels.com/photos/4344470/pexels-photo-4344470.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt="Caballos tranquilos en el picadero">
+        </div>
+        <div class="split-copy">
+          <h3>Tus primeros pasos con el caballo</h3>
+          <p>Empezamos por el manejo básico del caballo antes de subir a la silla: cómo acercarse, cómo se comporta
+            y cómo comunicarse con él. A partir de ahí, sesiones cortas y progresivas para montar con confianza.</p>
+          <ul>
+            <li>Teoría básica: equipo, seguridad y comportamiento del caballo</li>
+            <li>Postura y ayudas fundamentales en la silla</li>
+            <li>Sesiones adaptadas a la edad y disponibilidad</li>
+            <li>Evaluación inicial para ubicarte en el grupo adecuado</li>
+          </ul>
+          <a class="btn btn-gold" href="#contacto">Quiero empezar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERFECCIONAMIENTO -->
+  <section id="perfeccionamiento">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="kicker">Con base ya construida</div>
+          <h2>Perfeccionamiento</h2>
+        </div>
+        <p>Para jinetes y amazonas que ya tienen recorrido y quieren afinar técnica, ganar rendimiento o preparar
+          objetivos de competición.</p>
+      </div>
+
+      <div class="split reverse">
+        <div class="split-copy">
+          <h3>Trabajo fino, objetivo a objetivo</h3>
+          <p>Analizamos tu técnica actual — postura, ritmo, coordinación con el caballo — y construimos un plan de
+            trabajo por bloques, con evaluación periódica de la evolución.</p>
+          <ul>
+            <li>Corrección de postura y ayudas</li>
+            <li>Rutina semanal por bloques de trabajo</li>
+            <li>Preparación de recorridos y objetivos de competición</li>
+            <li>Seguimiento de la evolución del binomio jinete-caballo</li>
+          </ul>
+          <a class="btn btn-dark" href="#contacto">Hablar de mis objetivos</a>
+        </div>
+        <div class="split-figure">
+          <img src="https://images.pexels.com/photos/1559388/pexels-photo-1559388.jpeg?cs=tinysrgb&dpr=1&w=900" alt="Amazona saltando un obstáculo en competición">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="kicker">Vida en el club</div>
+          <h2>Galería</h2>
+        </div>
+        <p>Un vistazo al ambiente de Zelai Alai. Sustituiremos estas imágenes por fotografías reales del club en
+          cuanto las tengas listas.</p>
+      </div>
+
+      <div class="gallery">
+        <div class="big"><img src="https://images.pexels.com/photos/1524620/pexels-photo-1524620.jpeg?auto=compress&w=900&h=1100&dpr=1" alt="Jinete saltando un obstáculo"></div>
+        <div><img src="https://images.pexels.com/photos/4208106/pexels-photo-4208106.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=600" alt="Caballos en libertad en el campo"></div>
+        <div><img src="https://images.pexels.com/photos/5655497/pexels-photo-5655497.jpeg?cs=tinysrgb&dpr=1&w=600" alt="Salto sobre obstáculo de agua"></div>
+        <div><img src="https://images.pexels.com/photos/1559388/pexels-photo-1559388.jpeg?cs=tinysrgb&dpr=1&w=600" alt="Amazona saltando en competición"></div>
+        <div><img src="https://images.pexels.com/photos/28133398/pexels-photo-28133398/free-photo-of-two-horses-standing-in-a-field-with-grass.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=600" alt="Caballos en el prado"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
+    <div class="wrap">
+      <div class="head" style="border-color:rgba(18,32,23,.14)">
+        <div>
+          <div class="kicker">Hablemos</div>
+          <h2>Solicita información</h2>
+        </div>
+        <p>Cuéntanos tu nivel, tu edad y qué disciplina te interesa. Te respondemos con opciones de horario y
+          grupo disponible.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <h3 style="font-size:20px">Zelai Alai Hipika Eskola</h3>
+          <ul class="info-list">
+            <li>
+              <span class="info-ico">📍</span>
+              <span><b>Gaztañatza, 48215 Iurreta</b><span>Bizkaia</span></span>
+            </li>
+            <li>
+              <span class="info-ico">📞</span>
+              <span><b>Teléfono</b><span>691 746 611</span></span>
+            </li>
+            <li>
+              <span class="info-ico">✉️</span>
+              <span><b>Email</b><span>zelaialaihipikaeskola@gmail.com</span></span>
+            </li>
+            <li>
+              <span class="info-ico">🕒</span>
+              <span><b>Horario</b><span>Lunes a viernes, y sábados por la mañana (añadir)</span></span>
+            </li>
+          </ul>
+        </div>
+
+        <form onsubmit="return validarFormulario();">
+          <div class="frow">
+            <div>
+              <label for="fNombre">Nombre</label>
+              <input id="fNombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div>
+              <label for="fTelefono">Teléfono</label>
+              <input id="fTelefono" name="telefono" placeholder="Tu teléfono" required>
+            </div>
+          </div>
+          <div class="frow">
+            <div>
+              <label for="fEmail">Email</label>
+              <input id="fEmail" name="email" type="email" placeholder="tuemail@email.com" required>
+            </div>
+            <div>
+              <label for="fDisciplina">Te interesa</label>
+              <select id="fDisciplina" name="disciplina" required>
+                <option value="" selected disabled>Selecciona una opción</option>
+                <option>Saltos</option>
+                <option>Doma clásica</option>
+                <option>Completo</option>
+                <option>Paseos</option>
+                <option>Iniciación</option>
+                <option>Perfeccionamiento</option>
+                <option>Aún no lo sé</option>
+              </select>
+            </div>
+          </div>
+          <div class="frow">
+            <div>
+              <label for="fEdad">Edad aproximada</label>
+              <input id="fEdad" name="edad" placeholder="Ej. 10, 25, 40...">
+            </div>
+            <div>
+              <label for="fNivel">Nivel actual</label>
+              <select id="fNivel" name="nivel">
+                <option value="" selected disabled>Selecciona</option>
+                <option>Principiante</option>
+                <option>Intermedio</option>
+                <option>Avanzado</option>
+                <option>Vuelvo después de un tiempo</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="fMensaje">Mensaje</label>
+            <textarea id="fMensaje" name="mensaje" placeholder="Cuéntanos qué buscas: horarios, objetivos, experiencia previa..." required></textarea>
+          </div>
+          <button class="btn btn-gold" type="submit">Enviar solicitud</button>
+          <p class="fnote">Al enviar, aceptas que el club gestione tu solicitud. (Sustituir por el texto legal real del club)</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-grid">
+      <div>
+        <span class="brand-name" style="font-family:'Fraunces',serif; font-size:18px">Zelai Alai Hipika Eskola</span>
+        <div><small>Iurreta, Bizkaia · © <span id="year"></span></small></div>
+      </div>
+      <small>Doma clásica · Saltos · Completo · Paseos · Iniciación · Perfeccionamiento</small>
+    </div>
+  </footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  function validarFormulario(){
+    alert("¡Gracias! Tu solicitud ha sido enviada (demo). Conecta este formulario a tu email o backend real para recibir las solicitudes.");
+    return false;
+  }
+</script>
+</body>
+</html>
